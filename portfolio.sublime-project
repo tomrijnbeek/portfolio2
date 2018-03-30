@@ -1,0 +1,19 @@
+{
+  "folders":
+  [
+    {
+      "path": "."
+    }
+  ],
+  "settings":
+  {
+    "tab_size": 2
+  },
+  "build_systems":
+  [
+    {
+      "name": "Gulp",
+      "shell_cmd": "gulp"
+    }
+  ]
+}
