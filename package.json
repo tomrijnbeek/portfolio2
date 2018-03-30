@@ -6,6 +6,8 @@
   "author": "Tom Rijnbeek",
   "homepage": "https://tomrijnbeek.me",
   "dependencies": {
+    "@types/jquery": "^3.3.1",
+    "jquery": "^3.3.1",
     "scrollmagic": "^2.0.5"
   },
   "devDependencies": {
