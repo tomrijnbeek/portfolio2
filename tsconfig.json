@@ -1,10 +1,10 @@
 {
-  "files": [
-    "src/main.ts",
-    "src/greet.ts"
+  "include": [
+    "src/**/*.ts"
   ],
   "compilerOptions": {
     "noImplicitAny": true,
+    "removeComments": true,
     "target": "es5"
   }
 }

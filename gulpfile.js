@@ -15,7 +15,7 @@ const paths = {
 const watchedBrowserify = watchify(browserify({
       basedir: '.',
       debug: true,
-      entries: ['src/main.ts'],
+      entries: ['src/ts/main.ts'],
       cache: {},
       packageCache: {}
     })
@@ -37,7 +37,7 @@ gulp.task('copy-html', () =>
       .pipe(gulp.dest('dist')));
 
 gulp.task('styles', () =>
-  gulp.src('src/**/*.scss')
+  gulp.src('src/scss/**/*.scss')
       .pipe(sourcemaps.init())
       .pipe(sass({
             outputStyle: 'compressed',
@@ -46,7 +46,7 @@ gulp.task('styles', () =>
       .pipe(sourcemaps.write('./'))
       .pipe(gulp.dest('dist')));
 
-gulp.task('watchedStyles', () => gulp.watch('src/**/*.scss', ['styles']));
+gulp.task('watchedStyles', () => gulp.watch('src/scss/**/*.scss', ['styles']));
 watchedBrowserify.on('update', bundle);
 watchedBrowserify.on('log', gutil.log);
 
