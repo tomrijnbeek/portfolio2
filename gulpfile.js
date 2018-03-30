@@ -8,21 +8,23 @@ const sourcemaps = require('gulp-sourcemaps');
 const tsify = require('tsify');
 const uglify = require('gulp-uglify');
 const watchify = require('watchify');
+
 const paths = {
-    pages: ['src/*.html']
+    pages: ['src/*.html'],
+    styles: ['src/scss/**/*.scss'],
+    styleIncludes: ['node_modules/normalize.css/'],
 };
 
-const watchedBrowserify = watchify(browserify({
-      basedir: '.',
-      debug: true,
-      entries: ['src/ts/main.ts'],
-      cache: {},
-      packageCache: {}
-    })
-    .plugin(tsify));
+const browserifyOptions = {
+  basedir: '.',
+  debug: true,
+  entries: ['src/ts/main.ts'],
+  cache: {},
+  packageCache: {}
+};
 
-function bundle() {
-  watchedBrowserify
+function bundle(browserifyFunc) {
+  browserifyFunc
       .bundle()
       .pipe(source('bundle.js'))
       .pipe(buffer())
@@ -32,22 +34,30 @@ function bundle() {
       .pipe(gulp.dest('dist'));
 }
 
+const watchedBrowserify = watchify(browserify(browserifyOptions).plugin(tsify));
+watchedBrowserify.on('update', () => bundle(watchedBrowserify));
+watchedBrowserify.on('log', gutil.log);
+
 gulp.task('copy-html', () =>
   gulp.src(paths.pages)
       .pipe(gulp.dest('dist')));
 
+gulp.task('scripts', () =>
+    bundle(browserify(browserifyOptions).plugin(tsify)));
+
 gulp.task('styles', () =>
-  gulp.src('src/scss/**/*.scss')
+  gulp.src(paths.styles)
       .pipe(sourcemaps.init())
       .pipe(sass({
             outputStyle: 'compressed',
-            includePaths: ['node_modules/normalize.css/']})
+            includePaths: paths.styleIncludes})
           .on('error', sass.logError))
       .pipe(sourcemaps.write('./'))
       .pipe(gulp.dest('dist')));
 
-gulp.task('watchedStyles', () => gulp.watch('src/scss/**/*.scss', ['styles']));
-watchedBrowserify.on('update', bundle);
-watchedBrowserify.on('log', gutil.log);
+gulp.task('watch-html', () => gulp.watch(paths.pages, ['copy-html']));
+gulp.task('watch-scripts', () => bundle(watchedBrowserify));
+gulp.task('watch-styles', () => gulp.watch(paths.styles, ['styles']));
 
-gulp.task('default', ['copy-html', 'styles', 'watchedStyles'], bundle);
+gulp.task('default', ['copy-html', 'scripts', 'styles']);
+gulp.task('watch', ['default', 'watch-html', 'watch-scripts', 'watch-styles']);
