@@ -1,0 +1,12 @@
+body {
+  background: #eee;
+  min-width: 320px;
+}
+
+.container {
+  background: white;
+  box-shadow: $box-shadow;
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 8px 16px;
+}

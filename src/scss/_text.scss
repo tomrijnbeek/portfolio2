@@ -1,0 +1,29 @@
+body {
+  color: $text-color;
+  line-height: $line-height;
+  font-family: $font-stack;
+  font-size: $font-size;
+}
+
+h1 {
+  font-size: 300%;
+  font-weight: lighter;
+}
+
+h2 {
+
+}
+
+p {
+
+}
+
+a {
+  color: $accent-color;
+  text-decoration: none;
+
+  &:hover {
+    color: lighten($accent-color, 10%);
+    text-decoration: underline;
+  }
+}

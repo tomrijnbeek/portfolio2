@@ -1,9 +1,11 @@
 @import 'normalize';
 
-$font-stack: Helvetica, sans-serif;
-$primary-color: #333;
+@import 'mixins';
+@import 'variables';
 
-body {
-  color: $primary-color;
-  font: 100% $font-stack;
+@import 'layout';
+@import 'text';
+
+* {
+  box-sizing: border-box;
 }
