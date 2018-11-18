@@ -7,22 +7,22 @@
   "license": "ICS",
   "homepage": "https://tomrijnbeek.me",
   "dependencies": {
-    "@types/jquery": "^3.3.1",
+    "@types/jquery": "^3.3.22",
     "jquery": "^3.3.1",
-    "normalize.css": "^8.0.0",
-    "scrollmagic": "^2.0.5"
+    "normalize.css": "^8.0.1",
+    "scrollmagic": "^2.0.6"
   },
   "devDependencies": {
-    "browserify": "^16.1.1",
+    "browserify": "^16.2.3",
     "gulp": "^3.9.1",
     "gulp-sass": "^3.2.1",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-typescript": "^4.0.2",
-    "gulp-uglify": "^3.0.0",
+    "gulp-uglify": "^3.0.1",
     "gulp-util": "^3.0.8",
-    "node-sass": "^4.8.3",
+    "node-sass": "^4.10.0",
     "tsify": "^3.0.4",
-    "typescript": "^2.8.1",
+    "typescript": "^2.9.2",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0",
     "watchify": "^3.11.0"
