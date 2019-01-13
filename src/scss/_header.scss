@@ -4,6 +4,10 @@
   .profile-picture {
     flex: none;
     width: 25%;
+
+    img {
+      max-width: 100%;
+    }
   }
 
   .main-title {
