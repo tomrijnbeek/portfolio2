@@ -1,0 +1,12 @@
+.main-header {
+  display: flex;
+  
+  .profile-picture {
+    flex: none;
+    width: 25%;
+  }
+
+  .main-title {
+    flex: 1;
+  }
+}
