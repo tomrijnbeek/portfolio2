@@ -35,7 +35,10 @@ module.exports = {
       },
       {
         test: /\.html$/,
-        loader: 'html-loader'
+        loader: 'html-loader',
+        options: {
+          interpolate: true
+        }
       },
       {
         test: /\.(png|jpg|gif)$/i,
@@ -47,7 +50,15 @@ module.exports = {
             }
           }
         ]
-      }
+      },
+      {
+        test: /\.(pdf)$/i,
+        loader: 'file-loader',
+        options: {
+          outputPath: 'downloads',
+          name: '[name].[ext]',
+        },
+      },
     ]
   },
   resolve: {
