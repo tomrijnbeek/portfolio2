@@ -1,6 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
@@ -26,10 +26,7 @@ module.exports = {
         }, {
           loader: "css-loader"
         }, {
-          loader: "sass-loader",
-          options: {
-            includePaths: [path.join(__dirname, 'node_modules/normalize-scss/sass')]
-          }
+          loader: "sass-loader"
         }],
         exclude: /node_modules/
       },
@@ -46,7 +43,10 @@ module.exports = {
           {
             loader: 'url-loader',
             options: {
-              limit: 8192
+              // disable due to big in HTML loader:
+              // https://github.com/webpack-contrib/html-loader/issues/203
+              esModule: false,
+              limit: 8192,
             }
           }
         ]
@@ -55,6 +55,9 @@ module.exports = {
         test: /\.(pdf)$/i,
         loader: 'file-loader',
         options: {
+          // disable due to big in HTML loader:
+          // https://github.com/webpack-contrib/html-loader/issues/203
+          esModule: false,
           outputPath: 'downloads',
           name: '[name].[ext]',
         },
@@ -69,7 +72,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist')
   },
   plugins: [
-    new CleanWebpackPlugin(['dist']),
+    new CleanWebpackPlugin({dry: true}),
     new HtmlWebpackPlugin({
       template: './src/index.html',
       filename: './index.html'

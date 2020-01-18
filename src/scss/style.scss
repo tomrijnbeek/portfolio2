@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 
-@import 'normalize';
-@include normalize();
+@import '~normalize.css/normalize';
 
 @import 'mixins';
 @import 'variables';
