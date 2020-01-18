@@ -5,12 +5,16 @@ body {
 
 .container {
   background: white;
-  box-shadow: $box-shadow;
-  margin: 0 auto;
-  max-width: 800px;
-  padding: 8px 0;
 
-  header, section {
+  @media (min-width: $container-width) {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    box-shadow: $box-shadow;
+    margin: 8px auto 0 auto;
+    max-width: $container-width;
+  }
+
+  header, section, footer {
     @include container-content;
   }
 }

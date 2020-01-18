@@ -6,16 +6,25 @@ body {
 }
 
 h1 {
-  font-size: 300%;
-  font-weight: lighter;
+  font-size: 400%;
+  font-weight: 200;
 }
 
 h2 {
-
+  border-bottom: 1px solid $dimmer-color;
+  font-size: 200%;
+  font-weight: 200;
+  margin: 16px 0 8px;
 }
 
-p {
+h3 {
+  font-size: 150%;
+  font-weight: 200;
+  margin: 8px 0 4px;
+}
 
+.hi {
+  font-size: 150%;
 }
 
 a {
@@ -26,4 +35,9 @@ a {
     color: lighten($accent-color, 10%);
     text-decoration: underline;
   }
+}
+
+hr {
+  border: 0.5px $dimmer-color solid;
+  margin: 24px 48px;
 }

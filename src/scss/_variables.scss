@@ -1,12 +1,17 @@
 // Fonts
 $font-stack: 'Raleway', 'Helvetica', sans-serif;
-$font-size: 15px;
-$line-height: 1.5;
+$font-size: 16px;
+$line-height: 1.6;
 $line-height-computed: floor($font-size * $line-height);
 
 // Colours
 $text-color: black;
+$dim-color: rgb(94, 94, 94);
+$dimmer-color: rgb(188, 188, 188);
 $accent-color: #0039bd;
 
 // Shadows
 $box-shadow: 0 1px 4px rgba(0, 0, 0, .24);
+
+// Sizes
+$container-width: 960px;
