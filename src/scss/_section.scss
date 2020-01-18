@@ -5,3 +5,16 @@
   padding-bottom: 8px;
   padding-top: 8px;
 }
+
+.image-gallery {
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  
+  img {
+    display: block;
+    margin: 16px;
+    width: 240px;
+  }
+}
