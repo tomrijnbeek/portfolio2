@@ -7,11 +7,11 @@ module.exports = merge(common, {
   mode: 'production',
   devtool: 'source-map',
   output: {
-    filename: '[name].[hash].js'
+    filename: '[name].[contenthash].js'
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: '[name].[hash].css'
+      filename: '[name].[contenthash].css'
     }),
     new RobotstxtPlugin({
       policy: [

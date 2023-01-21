@@ -34,7 +34,16 @@ module.exports = {
         test: /\.html$/,
         loader: 'html-loader',
         options: {
-          interpolate: true
+          sources: {
+            list: [
+              '...',
+              {
+                tag: 'a',
+                attribute: 'href',
+                type: 'src'
+              }
+            ]
+          }
         }
       },
       {
@@ -90,6 +99,6 @@ module.exports = {
         }
       }
     },
-    moduleIds: 'hashed'
+    moduleIds: 'deterministic'
   }
 };
