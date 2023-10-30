@@ -8,7 +8,7 @@
   "homepage": "https://tomrijnbeek.me",
   "repository": "https://github.com/tomrijnbeek/portfolio2",
   "dependencies": {
-    "@types/jquery": "^3.5.24",
+    "@types/jquery": "^3.5.25",
     "jquery": "^3.7.1",
     "normalize.css": "^8.0.1",
     "scrollmagic": "^2.0.7"
