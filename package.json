@@ -24,7 +24,7 @@
     "node-sass": "^9.0.0",
     "robotstxt-webpack-plugin": "^8.0.0",
     "sass": "^1.69.6",
-    "sass-loader": "^13.3.2",
+    "sass-loader": "^13.3.3",
     "style-loader": "^3.3.3",
     "ts-loader": "^9.5.1",
     "ts-node": "^10.9.2",
